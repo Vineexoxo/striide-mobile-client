@@ -2,6 +2,8 @@ import React from 'react';
 import { TouchableOpacity, View, StyleSheet, Animated } from 'react-native';
 
 const NextPageButton = ({ handleNextPage }) => {
+
+  
   // Animating the scale on press (similar to hover effect)
   const scaleAnim = new Animated.Value(1);
 

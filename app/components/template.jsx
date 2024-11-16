@@ -1,7 +1,7 @@
 // app/components/Template.jsx
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
-import Layout from "../_layout"; // Import your Layout component
+import Layout from "./_layout"; // Import your Layout component
 
 export default function Template({ children }) {
   const [isLoading, setIsLoading] = useState(true);
