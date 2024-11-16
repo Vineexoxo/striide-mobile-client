@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "striide-mobile",
+    "scheme":"aora",
     "slug": "striide-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
