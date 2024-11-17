@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';  // Import navigation hook
+import Layout from '../components/_layout';
 
 const Home = () => {
   const navigation = useNavigation();  // Using the navigation hook
 
   return (
+    <Layout>
     <View style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>Welcome to <Text style={styles.boldText}>Striide</Text></Text>
@@ -27,6 +29,7 @@ const Home = () => {
         </TouchableOpacity>
       </View>
     </View>
+    </Layout>
   );
 };
 
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1, // Full screen usage
     justifyContent: 'center',  // Center content vertically
     alignItems: 'center', // Center content horizontally
-    backgroundColor: '#802EE8',
+    // backgroundColor: '#802EE8',
   },
   content: {
     alignItems: 'center',
