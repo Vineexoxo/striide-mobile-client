@@ -1,15 +1,14 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
 const Layout = ({ children }) => {
-  return <View style={styles.container}>{children}</View>;
+  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Ensures the layout takes up the full screen height
-    justifyContent: 'center', // Center content vertically
-    alignItems: 'center', // Center content horizontally
+    flex: 1,
+    backgroundColor: '#802EE8', // Define your background color here
   },
 });
 
