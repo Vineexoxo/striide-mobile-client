@@ -1,10 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View, StyleSheet, Animated } from 'react-native';
 
-const NextPageButton = ({ handleNextPage }) => {
-
-  
-  // Animating the scale on press (similar to hover effect)
+const NextPageButton = ({ onPress }) => {
   const scaleAnim = new Animated.Value(1);
 
   const handlePressIn = () => {
@@ -31,7 +28,7 @@ const NextPageButton = ({ handleNextPage }) => {
         {[0.6, 0.8, 1].map((opacity, index) => (
           <TouchableOpacity
             key={index}
-            onPress={handleNextPage}
+            onPress={onPress} // Assign onPress to trigger navigation
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
             style={styles.iconWrapper}
@@ -48,7 +45,7 @@ const NextPageButton = ({ handleNextPage }) => {
                 style={[
                   styles.arrowIcon,
                   { opacity: opacity },
-                  index === 0 && { marginLeft: -8 }, // Slight spacing for overlapping
+                  index === 0 && { marginLeft: -8 },
                   index === 1 && { marginLeft: -16 },
                 ]}
               >
@@ -71,30 +68,31 @@ const styles = StyleSheet.create({
   },
   arrowContainer: {
     flexDirection: 'row',
-    position: 'relative',
+    alignItems: 'center', // Ensure arrows are aligned
+    justifyContent: 'space-between', // Space arrows equally
   },
   iconWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginHorizontal: 8, // Add equal spacing around each arrow
   },
   iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   arrowIcon: {
-    width: 80, // Increased the size of the arrow container
-    height: 80,
+    width: 60,
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
   arrow: {
-    width: 0,
-    height: 0,
-    borderLeftWidth: 5, // Increased the width of the arrow body
-    borderTopWidth: 5, // Increased the height of the arrow body
+    width: 40,
+    height: 40,
+    borderLeftWidth: 5,
+    borderTopWidth: 5,
     borderColor: 'white',
-    transform: [{ rotate: '45deg' }],
+    transform: [{ rotate: '135deg' }],
   },
 });
-
 export default NextPageButton;

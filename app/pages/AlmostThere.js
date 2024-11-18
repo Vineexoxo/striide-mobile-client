@@ -62,11 +62,11 @@ const styles = StyleSheet.create({
     alignItems: 'left',
   },
   hello: {
-    fontSize: 60,
+    fontSize:80,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'left',
-    paddingLeft: 40,
+    paddingLeft: 10,
     fontFamily: 'Montserrat, sans-serif',
   },
   descriptionContainer: {
