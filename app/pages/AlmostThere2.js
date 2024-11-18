@@ -19,8 +19,17 @@ const Page = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [uploadedImageUrl, setUploadedImageUrl] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [error, setError] = useState(''); // State for error message
 
-  const handleNextStep = () => setStep(step + 1);
+
+  const handleNextStep = () => {
+    if (!occupation || !gender || !birthday || !isChecked) {
+      setError('Please fill in all fields and accept the terms to proceed.');
+    } else {
+      setError('');
+      setStep(step + 1);
+    }
+  };
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
@@ -83,6 +92,9 @@ const Page = () => {
                 <Text style={styles.link}>Terms of Service</Text> and <Text style={styles.link}>Privacy Policy</Text>.
               </Text>
             </View>
+
+            {/* Error Message */}
+            {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
             {/* Next Page Button */}
             <TouchableOpacity onPress={handleNextStep} style={styles.nextButton}>
@@ -268,6 +280,11 @@ const styles = StyleSheet.create({
   },
   closeModalButtonText: {
     color: '#FFFFFF',
+  },
+  errorText: {
+    color: 'red',
+    marginTop: 8,
+    textAlign: 'center',
   },
 });
 
